@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter,Route,Routes } from "react-router-dom"; //라이브러리 불러오기
 
 import HomeView from "./views/HomeView";
+import lenis from "./utils/lenis";
+import link from "./utils/link";
 
 const App=()=>{
+  useEffect(()=>{
+    lenis();
+    link();
+  },[]);
+  
+  //useEffect 함수는 컴퍼넌트가 렌더링 될때마다 특정 작업을 실행할 수 있도록 하는 리액트 훅
+  
+  
+  
   return(
     <BrowserRouter>
       <Routes>
@@ -24,3 +35,5 @@ export default App;
 <Route path="/" element={<HomeView />} /> : 이 부분은 "/" 경로에 해당하는 <HomeView> 컴포넌트를 렌더링하도록 설정하는 것입니다. path 속성에는 경로를 지정하고, element 속성에는 해당 경로에 렌더링할 컴포넌트를 JSX 문법으로 전달합니다.
 
 */
+
+//스무스 효과를 전체 소스에 넣어주기
